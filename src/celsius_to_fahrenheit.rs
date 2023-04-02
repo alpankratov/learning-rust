@@ -1,4 +1,5 @@
 use std::io;
+use crate::get_user_input::get_user_input_float;
 
 pub fn celsius_to_fahrenheit() {
     println!("Please enter known temperature base ('F' for Fahrenheit or 'C' for Celsius:");
@@ -10,29 +11,15 @@ pub fn celsius_to_fahrenheit() {
 
     println!("You entered {basis}");
 
-    let temperature: f32; // Declare the temperature variable before the loop
-    loop {
-        println!("Please enter the temperature you want to convert: ");
-        let mut input:String = String::new();
-
-        io::stdin().read_line(&mut input).expect("Failed to read line");
-
-        temperature = match input.trim().parse() {
-            Ok(num) => num,
-            Err(_) => {
-                println!("Please enter a valid number!");
-                continue;
-            },
-        };
-        break;
-    };
+    let temperature: f64 = get_user_input_float(
+        "Please enter the temperature you want to convert: ");
     match basis{
         'C' => {
-            let outcome: f32 = temperature * (9.0/5.0) + 32.0;
+            let outcome: f64 = temperature * (9.0/5.0) + 32.0;
             println!("Temperature in Fahrenheit of outcome is: {outcome}");
         },
         'F' => {
-            let outcome: f32 = (temperature - 32.0) * (5.0 / 9.0);
+            let outcome: f64 = (temperature - 32.0) * (5.0 / 9.0);
             println!("Temperature in Celsius of outcome is: {outcome}");
         }
         _ => {

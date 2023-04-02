@@ -2,6 +2,7 @@ use std::io;
 mod celsius_to_fahrenheit;
 mod get_n_fibonacci;
 mod get_rectangle_area;
+mod get_user_input;
 
 fn main() {
     println!("Select what you want to do:");
