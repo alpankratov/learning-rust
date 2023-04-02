@@ -1,4 +1,4 @@
-use crate::get_user_input::get_user_input_float;
+use crate::get_user_input;
 
 pub fn get_dimensions() {
 
@@ -7,8 +7,10 @@ pub fn get_dimensions() {
         length: 0.0,
     };
 
-    new_rectangle.width = get_user_input_float("Please enter width of a rectangle:");
-    new_rectangle.length = get_user_input_float("Please enter length of a rectangle:");
+    new_rectangle.width = get_user_input::get_user_input_float(
+        "Please enter width of a rectangle:");
+    new_rectangle.length = get_user_input::get_user_input_float(
+        "Please enter length of a rectangle:");
 
     println!("Rectangle is {:?}", new_rectangle);
     println!("Area of a rectangle: {}", new_rectangle.area());

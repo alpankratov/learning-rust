@@ -1,5 +1,5 @@
 use std::io;
-use crate::get_user_input::get_user_input_float;
+use crate::get_user_input;
 
 pub fn celsius_to_fahrenheit() {
     println!("Please enter known temperature base ('F' for Fahrenheit or 'C' for Celsius:");
@@ -11,7 +11,7 @@ pub fn celsius_to_fahrenheit() {
 
     println!("You entered {basis}");
 
-    let temperature: f64 = get_user_input_float(
+    let temperature: f64 = get_user_input::get_user_input_float(
         "Please enter the temperature you want to convert: ");
     match basis{
         'C' => {

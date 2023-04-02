@@ -1,8 +1,8 @@
-use crate::get_user_input::get_user_input_integer;
+use crate::get_user_input;
 
 pub fn get_n_fibonacci() {
 
-    let num:u32 = get_user_input_integer(
+    let num:u32 = get_user_input::get_user_input_integer(
         "Please enter how many Fibonacci numbers you want to get: ");
     get_fibonacci_sequence(num);
 }
