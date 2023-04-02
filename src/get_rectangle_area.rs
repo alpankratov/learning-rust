@@ -10,17 +10,19 @@ pub fn get_dimensions() {
     new_rectangle.width = get_user_input_float("Please enter width of a rectangle:");
     new_rectangle.length = get_user_input_float("Please enter length of a rectangle:");
 
-    let area = calculate_rectangle_area(new_rectangle);
-    println!("Area of a rectangle: {area}");
-
+    println!("Rectangle is {:?}", new_rectangle);
+    println!("Area of a rectangle: {}", new_rectangle.area());
 }
 
+#[derive(Debug)]
 struct Rectangle {
         width: f64,
         length: f64,
 }
 
-
-fn calculate_rectangle_area(dimension: Rectangle) -> f64 {
-    dimension.width * dimension.length
+impl Rectangle {
+    fn area(&self) -> f64 {
+        self.length * self.width
+    }
 }
+
