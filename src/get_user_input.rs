@@ -8,7 +8,10 @@ pub fn get_user_input_float(prompt: &str) -> f64 {
 
         match input.trim().parse() {
             Ok(x) => return x,
-            Err(_) => println!("Please enter a valid value"),
+            Err(_) => {
+                println!("Please enter a valid value");
+                continue;
+            },
         };
     }
 }
@@ -21,7 +24,10 @@ pub fn get_user_input_integer(prompt: &str) -> u32 {
 
         match input.trim().parse() {
             Ok(x) => return x,
-            Err(_) => println!("Please enter a valid value"),
+            Err(_) => {
+                println!("Please enter a valid value");
+                continue;
+                },
+            };
         };
     }
-}
